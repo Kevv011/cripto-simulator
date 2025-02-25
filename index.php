@@ -1,31 +1,38 @@
 <?php
 
-// Ruta solicitada (e.g., /usuario/login)
-$request = $_GET['url'] ?? '';
+// Iniciar sesión y gestionar datos de la sesión
+require_once "config/SessionManager.php";
+SessionManager::login();
 
-// Procesar la ruta
-if ($request) {
-    $segments = explode('/', $request);
-    $controller = $segments[0] ?? 'home';
-    $action = $segments[1] ?? 'index';
+// Se obtiene la ruta solicitada 
+$request = $_GET['url'] ?? 'crypto/index';
 
-    $controllerFile = "app/controllers/" . ucfirst($controller) . "Controller.php";
+// Se separa la ruta en segmentos para ser manejada
+$segments = explode('/', trim($request, '/'));
+$controller = $segments[0] ?? 'crypto';  // Controlador por defecto
+$action = $segments[1] ?? 'index';       // Acción por defecto
 
-    if (file_exists($controllerFile)) {
-        require_once $controllerFile;
+// Construir la ruta del archivo del controlador
+$controllerFile = "app/controllers/" . ucfirst($controller) . "Controller.php";
 
-        $className = ucfirst($controller) . "Controller";
+// Verificacion de la existencia del controlador
+if (file_exists($controllerFile)) {
+    require_once $controllerFile;
+
+    $className = ucfirst($controller) . "Controller";
+
+    if (class_exists($className)) {
         $controllerObject = new $className();
 
+        // Verificar si el método (acción) existe
         if (method_exists($controllerObject, $action)) {
             $controllerObject->$action();
         } else {
-            echo "Acción no encontrada.";
+            echo "Error 404: Acción '$action' no encontrada.";
         }
     } else {
-        echo "Controlador no encontrado.";
+        echo "Error 404: Clase '$className' no encontrada.";
     }
 } else {
-    header('Location: home/index/');
-    exit();
+    echo "Error 404: Controlador '$controller' no encontrado.";
 }
