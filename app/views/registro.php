@@ -8,16 +8,26 @@
 </head>
 
 <body>
-    <form method="POST" action="">
+    <header>
+        <a href="/cripto-simulator/Crypto/index">Regresar</a>
+    </header>
+
+    <h1>Registro</h1>
+    <form method="POST" action="/cripto-simulator/User/registro">
         <div>
             <label for="name">Ingresa tu nombre de usuario</label>
             <input type="text" name="userName">
         </div>
         <div>
-            <label for="name">Ingresa tu contraseña</label>
-            <input type="text" name="UserPass">
+            <label for="name">Ingresa tu correo</label>
+            <input type="email" name="userEmail">
         </div>
-        <a href="/cripto-simulator/User/registro">¿Aún no tienes un usuario?</a>
+        <div>
+            <label for="name">Ingresa tu contraseña</label>
+            <input type="password" name="UserPass">
+        </div>
+        <p>¿Ya tienes un usuario?, <a href="/cripto-simulator/User/iniciar_sesion">Iniciar Sesión</a></p>
+        <button>Registrarse</button>
     </form>
 </body>
 

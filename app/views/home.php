@@ -11,12 +11,16 @@
     <header>
 
         <!--Si hay un usuario logueado, redirige a la billetera para hacer compras y ventas-->
-        <?php if (!isset($_SESSION['usuario'])) { ?>
+        <?php if ($_SESSION['autenticado'] == true) { ?>
             <a href="/cripto-simulator/Crypto/compraVenta">Ir a la billetera</a>
+            <a href="/cripto-simulator/User/cerrar_sesion">Cerrar Sesión</a>
+            <p>Bienvenido, <?= $_SESSION['usuario']  ?></p>
 
-        <!--Si No hay un usuario logueado, redirige al login-->
+        <!--Si No hay un usuario logueado, redirige al login y da acceso al registro y el login directamente-->
         <?php } else { ?>
-            <a href="/cripto-simulator/User/index">Ir a la billetera</a>
+            <a href="/cripto-simulator/User/iniciar_sesion">Ir a la billetera</a>
+            <a href="/cripto-simulator/User/iniciar_sesion">Iniciar Sesión</a>
+            <a href="/cripto-simulator/User/registro">Registrarse</a>
         <?php } ?>
 
     </header>

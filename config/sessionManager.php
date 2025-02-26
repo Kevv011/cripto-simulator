@@ -19,12 +19,6 @@ class SessionManager
             $_SESSION['criptos'] = [];
         }
 
-        // Se inicia sesion de array "Usuario" para determinar que hay un usuario logueado
-        if (!isset($_SESSION['usuario'])) {
-            $_SESSION['usuario'] = '';
-            $_SESSION['contraseña'] = '';
-        }
-
         //Inicia sesion de "Precios" para actualizarlos en cada recarga (Guarda el nombre y precio en un array asociativo desde el controlador)
         if (!isset($_SESSION['precios'])) {
             $cryptoController = new CryptoController();
