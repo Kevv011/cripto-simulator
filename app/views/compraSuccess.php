@@ -8,10 +8,13 @@
 </head>
 
 <body>
+
+    <!--Opcion para regresar a la billetera-->
     <header>
         <a href="/cripto-simulator/Crypto/compraVenta">Regresar a la billetera</a>
     </header>
 
+    <!--A partir de la logica del modelo y el manejo en el controlador, se imprime el mensaje si fue exitosa o no la compra de criptomonedas-->
     <?php if (isset($_SESSION['mensaje'])) { ?>
         <div>
             <?= $_SESSION['mensaje']; ?>

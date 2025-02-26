@@ -12,6 +12,7 @@
         <a href="/cripto-simulator/Crypto/index">Regresar</a>
     </header>
 
+    <!--Formulario de registro de usuario con 3 campos-->
     <h1>Registro</h1>
     <form method="POST" action="/cripto-simulator/User/registro">
         <div>

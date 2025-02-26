@@ -12,6 +12,7 @@
         <a href="/cripto-simulator/Crypto/index">Regresar</a>
     </header>
 
+    <!--Formulario de Inicio de sesion con 2 campos-->
     <h1>Iniciar Sesión</h1>
     <form method="POST" action="/cripto-simulator/User/iniciar_sesion">
         <div>
