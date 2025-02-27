@@ -19,6 +19,11 @@ class SessionManager
             $_SESSION['criptos'] = [];
         }
 
+        // Se inicia sesion de "autenticado" que define si hay un login o no
+        if (!isset($_SESSION['autenticado'])) {
+            $_SESSION['autenticado'] = false;
+        }
+
         //Inicia sesion de "Precios" para actualizarlos en cada recarga (Guarda el nombre y precio en un array asociativo desde el controlador)
         if (!isset($_SESSION['precios'])) {
             $cryptoController = new CryptoController();
