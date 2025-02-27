@@ -128,7 +128,7 @@
         <?php endforeach; ?>
     </ul>
 
-    <form method="post" action="/cripto-simulator/Crypto/actualizarPrecios">
+    <form method="post" action="/cripto-simulator/Crypto/actualizarPrecios" class="mb-4">
         <button type="submit">Actualizar Precios</button>
     </form>
 
