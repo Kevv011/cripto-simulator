@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(245, 252, 244);
+    font-family: 'Poppins', sans-serif;
+}
+
+.registro-container {
+    max-width: 450px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.registro-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgb(103, 151, 91);
+    font-weight: 600;
+}
+
+.registro-container p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgb(105, 151, 91);
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.btn-registro {
+    background-color: rgb(118, 151, 91);
+    color: white;
+    width: 105%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.registro-container a {
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(87, 134, 81);
+}
